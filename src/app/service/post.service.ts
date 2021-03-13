@@ -7,6 +7,7 @@ import { Post } from '../model/post';
   providedIn: 'root'
 })
 export class PostService {
+  
  
   private apiURL = "https://jsonplaceholder.typicode.com";
   
@@ -19,6 +20,9 @@ export class PostService {
 }
 
 getAll(): Observable <Post[]> {
-  return this.httpClient.get<Post[]>( this.apiURL + '/posts/',this.httpOptions);
+  return this.httpClient.get<Post[]>( this.apiURL + '/posts?userId='+8,this.httpOptions);
+}
+create(post: any): Observable<Post[]>{
+  return this.httpClient.post<Post[]>(this.apiURL + '/posts/',JSON.stringify(post),this.httpOptions)
 }
 }
