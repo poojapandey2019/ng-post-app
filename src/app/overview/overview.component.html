@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <h2>All Posts</h2>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let post of postList; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{post.id}}</td>
+            <td>{{post.title}}</td>
+            <td>{{post.body}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
